@@ -1,17 +1,28 @@
 <template>
   <div>
-    <router-link to="/" class="text-xl font-bold mx-2">Home</router-link>
+    <router-link to="/" class="text-xl font-bold mx-2"
+    >home</router-link
+    >
     <router-link to="/people" class="text-xl font-bold mx-2"
-      >People</router-link
+      >people</router-link
     >
     <router-link to="/starship" class="text-xl font-bold mx-2"
-      >Starship</router-link
+      >starship</router-link
     >
     <router-link to="/vehicle" class="text-xl font-bold mx-2"
-      >Vehicle</router-link
+      >vehicles</router-link
     >
-    <router-link to="/specie" class="text-xl font-bold mx-2"
-      >Specie</router-link
+    <router-link to="/species" class="text-xl font-bold mx-2"
+      >species</router-link
+    >
+    <router-link to="/planets" class="text-xl font-bold mx-2"
+      >planets</router-link
+    >
+    <router-link to="/films" class="text-xl font-bold mx-2"
+      >films</router-link
+    >
+    <router-link to="/quizz" class="text-xl font-bold mx-2"
+      >quizz</router-link
     >
   </div>
 </template>
