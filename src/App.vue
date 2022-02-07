@@ -1,15 +1,7 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import { ref, onMounted } from "vue";
 import Navbar from "./components/Navbar.vue";
-import People from "./service/module/people";
-
-let peoples = ref([]);
-onMounted(async () => {
-  peoples.value = await People.listPeople(3);
-  console.log(peoples.value.data);
-});
 </script>
 
 <template>
@@ -34,7 +26,6 @@ onMounted(async () => {
   color: #FFE81F;
   letter-spacing: 3px;
   margin-top: 50px;
-  font-size: medium;
 }
 body {
   background: url("../public/background.jpg");
