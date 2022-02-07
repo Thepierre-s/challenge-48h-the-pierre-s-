@@ -4,14 +4,14 @@
 import {ref, onMounted} from 'vue'
 import Specie from "../components/CardSpecie.vue";
 import Spec from "../service/module/specie";
-let onePerson=ref(null);
+let OneSpecie=ref(null);
 onMounted(async () => {
     let i =1;
   
 let data = await Spec.getSpecieById(i);
   console.log(data.data);
-  onePerson.value = data.data;
-  console.log(onePerson.value); 
+  OneSpecie.value = data.data;
+  console.log(OneSpecie.value); 
     
 });
 </script>
@@ -19,7 +19,7 @@ let data = await Spec.getSpecieById(i);
 <template>
 
   <Specie 
-   :spec="onePerson"
+   :spec="OneSpecie"
   />
   
 
