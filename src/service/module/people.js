@@ -1,11 +1,14 @@
 import apiClient from "../http-common";
+export default {
+  async listPeople(page = 1) {
+    return await apiClient.get("/people/?page=" + page);
+  },
 
-async function listPeople() {
-  return await apiClient.get("/people");
-}
+  async getPeopleById(id) {
+    return await apiClient.get("/people/" + id);
+  },
 
-async function getPeopleById(id) {
-  return await apiClient.get("/people/" + id);
-}
-
-export { listPeople, getPeopleById };
+  async searchPeople(searchInput) {
+    return await apiClient.get("/people/?search=" + searchInput);
+  },
+};
