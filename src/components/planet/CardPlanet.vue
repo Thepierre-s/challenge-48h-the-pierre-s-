@@ -15,8 +15,8 @@ defineProps({
     />
 
     <p class="text-3xl font-bold font-gray-200">{{ planet.name }}</p>
-    <p class="text-2xl font-bold">{{ planet.classification }}</p>
-    <p class="text-2xl font-bold">{{ planet.designation }}</p>
+    <p class="text-2xl font-bold">{{ planet.terrain }}</p>
+    <p class="text-2xl font-bold">{{ planet.population }}</p>
   </div>
 </template>
 
