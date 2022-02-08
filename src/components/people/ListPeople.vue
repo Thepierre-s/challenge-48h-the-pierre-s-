@@ -5,7 +5,17 @@ import { onMounted, ref } from "vue";
 defineProps({
   people: Array,
 });
+// const count = ref(0);
+// const emit = defineEmits(["increment"]);
 
+// function Less() {
+//   count.value--;
+//   emit("increment", count.value);
+// }
+// function More() {
+//   count.value++;
+//   emit("increment", count.value);
+// }
 let pageNumber = ref(null);
 
 pageNumber.value = 1;
@@ -17,14 +27,13 @@ pageNumber.value = 1;
     class="container w-full p-3 mx-auto flex justify-center"
     id="example-1"
   >
-    <button v-on:click="counter -= 1">previous</button>
+    <button>previous</button>
     <CardPeople
       v-for="person in people"
       :key="person"
       :person="person"
       :pageNumber="pageNumber"
     ></CardPeople>
-    <button v-on:click="counter += 1">next</button>
-    <p>{{ counter }}</p>
+    <button>next</button>
   </div>
 </template>

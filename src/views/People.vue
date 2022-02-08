@@ -5,33 +5,6 @@ import ListPeople from "../components/people/ListPeople.vue";
 import People from "../service/module/people";
 import { ref, onMounted } from "vue";
 
-const tabPersos2 = ref([
-  {
-    name: "Luke Skywalker",
-    img: "https://vignette.wikia.nocookie.net/fr.starwars/images/f/fa/Luke_TLJ.jpg/revision/latest?cb=20180110093251",
-    id: 1,
-  },
-  {
-    name: "C-3PO",
-    img: "https://vignette.wikia.nocookie.net/fr.starwars/images/f/fa/Luke_TLJ.jpg/revision/latest?cb=20180110093251",
-    id: 2,
-  },
-  {
-    name: "Darth Vader",
-    img: "https://vignette.wikia.nocookie.net/fr.starwars/images/f/fa/Luke_TLJ.jpg/revision/latest?cb=20180110093251",
-    id: 3,
-  },
-  {
-    name: "Leia Organa",
-    img: "https://vignette.wikia.nocookie.net/fr.starwars/images/f/fa/Luke_TLJ.jpg/revision/latest?cb=20180110093251",
-    id: 4,
-  },
-  {
-    name: "Owen Lars",
-    img: "https://vignette.wikia.nocookie.net/fr.starwars/images/f/fa/Luke_TLJ.jpg/revision/latest?cb=20180110093251",
-    id: 1,
-  },
-]);
 let onePerson = ref(null);
 let tabPersos = ref(null);
 onMounted(async () => {
