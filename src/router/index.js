@@ -7,6 +7,7 @@ import Film from "../views/Film.vue";
 import Starship from "../views/Starship.vue";
 import Planet from "../views/Planet.vue";
 import Quizz from "../views/Quizz.vue";
+import DescriptionPeople from "../components/people/DescriptionPeople.vue";
 const routes = [
   {
     path: "/",
@@ -17,45 +18,45 @@ const routes = [
     path: "/people",
     name: "People",
     component: People,
+    children: [
+      {
+        path: ":id",
+        component: DescriptionPeople,
+        props: true,
+      },
+    ],
   },
   {
     path: "/species",
     name: "Species",
     component: Specie,
-
   },
   {
     path: "/starships",
     name: "Starships",
     component: Starship,
-
-  }
-  ,
+  },
   {
     path: "/planets",
     name: "Planets",
     component: Planet,
   },
-  
+
   {
     path: "/films",
     name: "Films",
     component: Film,
-  }
-   ,
+  },
   {
     path: "/vehicle",
     name: "Vehicles",
     component: Vehicle,
-
-  }
-  ,
+  },
   {
     path: "/quizz",
     name: "Quizz",
     component: Quizz,
-
-  }
+  },
 ];
 const router = createRouter({
   history: createWebHistory(),

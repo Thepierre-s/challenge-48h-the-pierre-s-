@@ -31,7 +31,6 @@ pageNumber.value = 1;
   <div
     v-if="people != null"
     class="container w-full p-3 mx-auto flex justify-center"
-    id="example-1"
   >
     <button @click="Less">previous</button>
     <CardPeople
