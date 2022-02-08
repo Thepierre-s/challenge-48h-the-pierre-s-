@@ -1,16 +1,16 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 const props = defineProps({
   person: Object,
 });
-
 const nameHomeWorld = ref("Allr chercher nom dans l'API");
 
-let urlImg = ref(null);
-urlImg.value =
-  "./src/assets/img/characters/" +
-  props.person.url.split("/")[props.person.url.split("/").length - 2] +
-  ".jpg";
+const urlImg = computed(
+  () =>
+    "./src/assets/img/characters/" +
+    props.person.url.split("/")[props.person.url.split("/").length - 2] +
+    ".jpg"
+);
 </script>
 
 <template>
