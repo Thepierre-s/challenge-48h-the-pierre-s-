@@ -35,8 +35,8 @@ const urlImg = computed(
     class="container px-1 md:px-10 md:py-10 flex justify-between mx-auto"
   >
     <div class="flex flex-col items-center justify-center">
-      <h2 class="mb-5 text-[20px]">{{ onePerson.name }}</h2>
-      <ul class="text-[15px]">
+      <h2 class="mt-20 text-[20px]">{{ onePerson.name }}</h2>
+      <ul class="mt-20 text-[15px]">
         <li>Height : {{ onePerson.height }}</li>
         <li>Mass : {{ onePerson.mass }}</li>
         <li v-if="onePerson.hair_color != 'n/a'">
