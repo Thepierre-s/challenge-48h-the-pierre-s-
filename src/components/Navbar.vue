@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex justify-center">
     <router-link to="/" class="text-xl mx-2"
     >home</router-link
     >
