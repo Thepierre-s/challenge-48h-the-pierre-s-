@@ -15,8 +15,40 @@ const routes = [
     component: People,
   },
   {
-    path: "/specie",
-    name: "Specie",
+    path: "/species",
+    name: "Species",
+    component: Specie,
+
+  },
+  {
+    path: "/starships",
+    name: "Starships",
+    component: Specie,
+
+  }
+  ,
+  {
+    path: "/planets",
+    name: "Planets",
+    component: Specie,
+  },
+  
+  {
+    path: "/films",
+    name: "Films",
+    component: Specie,
+  }
+   ,
+  {
+    path: "/vehicle",
+    name: "Vehicles",
+    component: Specie,
+
+  }
+  ,
+  {
+    path: "/quizz",
+    name: "Quizz",
     component: Specie,
 
   }
