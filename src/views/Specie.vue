@@ -4,10 +4,15 @@
 import { ref, onMounted } from "vue";
 
 import ListSpecie from "../components/specie/ListSpecie.vue";
+
+import DetailsSpecie from "../components/specie/DetailsSpecie.vue";
 </script>
 
 <template>
-  <ListSpecie />
+  <div class="container">
+    <DetailsSpecie></DetailsSpecie>
+    <ListSpecie />
+  </div>
 </template>
 
 <style></style>
