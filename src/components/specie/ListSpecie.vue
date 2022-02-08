@@ -5,12 +5,16 @@ import Specie from "../../service/module/specie";
 let species = ref(null);
 onMounted(async () => {
   let data = await Specie.listSpecie();
-  species.value = data.results;
+  species.value = data.data.results;
 });
 </script>
 
 <template>
   <div class="container w-full p-3 mx-auto flex justify-center">
-    <CardSpecie v-for="spec in species" :key="spec" :spec="spec"></CardSpecie>
+    <CardSpecie
+      v-for="specie in species"
+      :key="specie"
+      :spec="specie"
+    ></CardSpecie>
   </div>
 </template>
