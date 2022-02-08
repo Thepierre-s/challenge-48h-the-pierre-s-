@@ -1,15 +1,25 @@
 import apiClient from "../http-common";
+import ChangeUrl from "../ChangeUrl"
 
 export default {
   async listStarship(page = 1) {
-    return await apiClient.get("/starships/?page=" + page);
+    let dataGroupes = ["films","pilots"]
+    let data = await apiClient.get("/starships/?page=" + page)
+    data.data["results"]=await ChangeUrl.multiplesUrlToIdAndName(data.data["results"],dataGroupes)
+    return data;
   },
 
   async getStarshipById(id) {
-    return await apiClient.get("/Ssarships/" + id);
+    let dataGroupes = ["films","pilots"]
+    let data = await apiClient.get("/starships/" + id)
+    data.data["results"]=await ChangeUrl.urlToIdAndName(data.data,dataGroupes)
+    return data;
   },
 
   async searchStarship(searchInput) {
-    return await apiClient.get("/starships/?search=" + searchInput);
+    let dataGroupes = ["films","pilots"]
+    let data = await apiClient.get("/starships/?search=" + searchInput)
+    data.data["results"]=await ChangeUrl.urlToIdAndName(data.data["results"][0],dataGroupes)
+    return data;
   },
 };
