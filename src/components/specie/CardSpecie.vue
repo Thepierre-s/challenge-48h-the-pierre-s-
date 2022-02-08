@@ -8,7 +8,7 @@ let imgUrl = computed(
   () =>
     "./src/assets/img/species/" +
     prop.spec.url.split("/")[prop.spec.url.split("/").length - 2] +
-    ".jpg"
+    ".png"
 );
 </script>
 
