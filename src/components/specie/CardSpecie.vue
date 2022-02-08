@@ -21,8 +21,8 @@ let imgUrl = computed(
     />
     <div class="w-full h-1/3">
       <p class="text-3xl font-bold font-gray-200">{{ spec.name }}</p>
-      <p class="text-2xl font-bold">{{ spec.classification }}</p>
-      <p class="text-2xl font-bold">{{ spec.designation }}</p>
+   <!--    <p class="text-2xl font-bold">{{ spec.classification }}</p>
+      <p class="text-2xl font-bold">{{ spec.designation }}</p> -->
     </div>
   </div>
 </template>
