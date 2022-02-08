@@ -1,22 +1,7 @@
+import axios from "axios";
 import apiClient from "./http-common";
 
 export default {
-
-  async IdAndName(data, dataGroupe){
-    let nameType = "name"
-    if (dataGroupe === "films"){
-      nameType= "title"
-    }
-    const dict = {};
-    if (data[data.length-3]=="/"){
-      dict["id"] = parseInt(data[data.length-2]);
-    }else{
-      dict["id"] = parseInt(data.substr(data.length-3,data.length-2));
-    }
-    let name = await apiClient.get(data.substr(21,data.length-1));
-    dict[nameType] = name.data[nameType];
-    return dict
-  },
 
   async multiplesUrlToIdAndName(data,dataGroupes){
     data.forEach(async (item,index)=>{
@@ -30,14 +15,39 @@ export default {
       
       if (dataGroupe==="homeworld"){
         if (data[dataGroupe]!=null){
-          data[dataGroupe] = await this.IdAndName(data[dataGroupe],dataGroupe);
+          const dict = {};
+            if (data[dataGroupe][data[dataGroupe].length-3]=="/"){
+              dict["id"] = parseInt(data[dataGroupe][data[dataGroupe].length-2]);
+            }else{
+              dict["id"] = parseInt(data[dataGroupe].substr(data[dataGroupe].length-3,data[dataGroupe].length-2));
+            }
+            let responses = await apiClient.get(data[dataGroupe].substr(21,data[dataGroupe].length-1));
+            dict["name"] = responses.data["name"].toLowerCase();
+            data[dataGroupe]=dict;
         }
 
       }else{
-        data[dataGroupe].forEach(async (item , index) => {
-          data[dataGroupe][index] = await this.IdAndName(data[dataGroupe][index],dataGroupe);
-        });
+        axios.all(data[dataGroupe].map((endpoint) => axios.get(endpoint))).then(axios.spread((...responses) => {
+
+          for (let i =0 ; i < data[dataGroupe].length ; i++){
+
+            let nameType = "name";
+            if (dataGroupe === "films"){
+              nameType= "title";
+            }
+            const dict = {};
+            if (data[dataGroupe][i][data[dataGroupe][i].length-3]=="/"){
+              dict["id"] = parseInt(data[dataGroupe][i][data[dataGroupe][i].length-2]);
+            }else{
+              dict["id"] = parseInt(data[dataGroupe][i].substr(data[dataGroupe][i].length-3,data[dataGroupe][i].length-2));
+            }
+            dict[nameType] = responses[i].data[nameType].toLowerCase();
+            data[dataGroupe][i]=dict;
+
+          }
+        }))
       }
+      
     });
     return data;
   },
