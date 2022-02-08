@@ -1,13 +1,130 @@
 <script setup>
-import { ref, inject, watch } from "vue";
+import { ref, inject, watch, computed, onMounted } from "vue";
 const { state, setStateProp } = inject("state");
-console.log(state.data.category);
+import Restart from "./Restart.vue";
+import ImgBlurred from "./ImgBlurred.vue";
+
+const category = ref(state.data.category);
+if (category.value == "people") {
+  category.value = "characters";
+}
+const datas = ref([
+  {
+    name: "luke",
+    id: "1",
+  },
+  {
+    name: "moi",
+    id: "2",
+  },
+]);
+
+// https://maximomussini.com/posts/vue-custom-elements
+let message = ref();
+let reponse = ref();
+
+let badAnswer = ref(false);
+let goodAnswer = ref(false);
+
+let beginGame = ref(false);
+let tourStarted = ref(false);
+let tourEnded = ref(false);
+let endGame = ref(false);
+let urlImg = ref();
+
+let counter = ref();
+let timer = ref(15);
+
+let round = ref(-1);
+
+let showPicture = ref(false);
+
+function endTourFunc() {
+  clearInterval(counter.value);
+  tourEnded.value = true;
+  tourStarted.value = false;
+  message.value = "";
+  timer.value = 0;
+  badAnswer.value = false;
+  if (round.value + 1 == datas.value.length) {
+    endGame.value = true;
+  }
+}
+
+function startTour() {
+  round.value++;
+
+  urlImg.value =
+    "./src/assets/img/" +
+    category.value +
+    "/" +
+    datas.value[round.value].id +
+    ".jpg";
+
+  reponse.value = datas.value[round.value].name;
+  showPicture.value = true;
+  beginGame.value = true;
+  tourStarted.value = true;
+  tourEnded.value = false;
+  goodAnswer.value = false;
+  timer.value = 15;
+
+  counter.value = setInterval(function () {
+    timer.value--;
+    if (timer.value == 0) {
+      endTourFunc();
+    }
+  }, 1000);
+}
+
+function submit() {
+  if (message.value.toLowerCase() == reponse.value) {
+    goodAnswer.value = true;
+    badAnswer.value = false;
+    state.score.points++;
+    endTourFunc();
+  } else {
+    badAnswer.value = true;
+  }
+}
+
+function seeResults() {
+  state.score.valid = true;
+  console.log(state.score.points);
+}
+
+computed(() => {
+  let root = document.querySelector(".blurred");
+  console.log(root);
+  root.classList.toggle("not_blurred");
+});
 </script>
 <template>
-  <p>la catégorie choisie est : {{ state.data.category }}</p>
+  <Restart></Restart>
+
+  <div>
+    <button v-if="!beginGame" @click="startTour">start</button>
+
+    <!--ici composant resultTour-->
+    <div v-if="tourEnded">
+      <button v-if="!endGame" @click="startTour">next picture</button>
+      <p>Réponse : {{ reponse }}</p>
+      <div v-if="goodAnswer">bravo vous avez trouvé !</div>
+    </div>
+    <!--fin composant resultTour-->
+
+    <!--ICI COMPOSANT GUESS-->
+    <div v-if="tourStarted">
+      <p>{{ timer }}</p>
+      <input v-model="message" placeholder="votre réponse..." />
+      <button @click="submit">submit</button>
+      <p v-if="badAnswer">bad answer !</p>
+    </div>
+    <!--fin composanT guess-->
+
+    <p>tour : {{ round + 1 }} / {{ state.nbQuestions }}</p>
+
+    <button v-if="endGame" @click="seeResults">See results</button>
+    <ImgBlurred v-if="showPicture" :url="urlImg"></ImgBlurred>
+  </div>
 </template>
-<style>
-.blurred {
-  filter: blur(20px);
-}
-</style>

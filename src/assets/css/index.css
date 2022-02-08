@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+button {
+  color: red;
+  border: 1px solid blue;
+  padding: 3px;
+}
+button:hover {
+  text-decoration: underline;
+  background-color: yellow;
+}

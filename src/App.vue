@@ -5,25 +5,25 @@ import Navbar from "./components/Navbar.vue";
 </script>
 
 <template>
-<div class="app">
-  <Navbar />
-  <router-view />
-</div>
+  <div class="app">
+    <Navbar />
+    <router-view />
+  </div>
 </template>
 
 <style>
 @font-face {
   font-family: "Star Jedi";
-  src:  url("/font/starjedi-webfont.woff2") format("woff2"),
-        url("/font/starjedi-webfont.woff") format("woff"),
-        url("/font/starjedi.ttf") format("ttf");
+  src: url("/font/starjedi-webfont.woff2") format("woff2"),
+    url("/font/starjedi-webfont.woff") format("woff"),
+    url("/font/starjedi.ttf") format("ttf");
 }
 #app {
   font-family: "Star Jedi";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #FFE81F;
+  color: #ffe81f;
   letter-spacing: 3px;
   margin-top: 50px;
 }
