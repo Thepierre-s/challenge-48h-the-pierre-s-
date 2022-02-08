@@ -19,14 +19,14 @@ export default {
   },
 
   async multiplesUrlToIdAndName(data,dataGroupes){
-    await data.forEach(async (item,index)=>{
+    data.forEach(async (item,index)=>{
       data[index] = await this.urlToIdAndName(item,dataGroupes);
     });
-    return await data;
+    return data;
   },
 
   async urlToIdAndName(data,dataGroupes){
-    await dataGroupes.forEach(async dataGroupe => {
+    dataGroupes.forEach(async dataGroupe => {
       
       if (dataGroupe==="homeworld"){
         if (data[dataGroupe]!=null){
@@ -34,11 +34,11 @@ export default {
         }
 
       }else{
-        await data[dataGroupe].forEach(async (item , index) => {
+        data[dataGroupe].forEach(async (item , index) => {
           data[dataGroupe][index] = await this.IdAndName(data[dataGroupe][index],dataGroupe);
         });
       }
     });
-    return await data;
+    return data;
   },
 };
