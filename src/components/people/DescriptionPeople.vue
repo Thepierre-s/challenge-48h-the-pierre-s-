@@ -29,8 +29,8 @@ const urlImg = computed(
 
 <template>
   <div v-if="loading == true">loading</div>
-  <div v-else-if="onePerson != null" id="character" class="container px-1 md:px-10 md:py-10 flex justify-between mx-auto">
-    <div class="flex flex-col justify-end">
+  <div v-else-if="onePerson != null" id="character" class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex items-center justify-between">
+    <div class="flex flex-col mt-8 justify-end">
       <h2 class="text-[30px] items-center">{{ onePerson.name }}</h2>
       <ul class="m-2 text-[15px]">
         <li class="m-2">Height : {{ onePerson.height }}</li>
@@ -53,10 +53,11 @@ const urlImg = computed(
 }
 #character::after {
   font-family: "Star Jhol";
-  content: "The character";
+  content: "character";
   position: absolute;
   left: 25%;
   font-size: 6rem;
   z-index: -3;
+  margin-bottom: 400px;
 }
 </style>

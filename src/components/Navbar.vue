@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-10">
+  <div class="m-8">
     <router-link to="/" class="wrap-image text-xl m-10">home</router-link>
     <router-link to="/people" class="wrap-image text-xl m-10">people</router-link>
     <router-link to="/starships" class="wrap-image text-xl m-10">starship</router-link>

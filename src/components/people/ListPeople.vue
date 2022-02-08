@@ -30,7 +30,7 @@ pageNumber.value = 1;
 <template>
   <div
     v-if="people != null"
-    class="container w-full p-3 mx-auto flex justify-center"
+    class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex items-center justify-center"
   >
     <button @click="Less">
       <svg
