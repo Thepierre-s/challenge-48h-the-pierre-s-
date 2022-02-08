@@ -23,7 +23,7 @@ watch(async (id) => {
   loading.value = false;
 });
 const urlImg = computed(
-  () => "../src/assets/img/characters/" + props.id + ".jpg"
+  () => "../src/assets/img/characters/" + props.id + ".png"
 );
 </script>
 
@@ -60,6 +60,7 @@ const urlImg = computed(
   position: relative;
 }
 #character::after {
+  font-family: "Star Jhol";
   content: "The character";
   position: absolute;
   left: 25%;

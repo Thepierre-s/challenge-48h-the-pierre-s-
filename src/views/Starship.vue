@@ -1,1 +1,1 @@
-<template>starship</template>
+<template></template>

@@ -9,7 +9,7 @@ let personID = ref();
 personID.value =
   props.person.url.split("/")[props.person.url.split("/").length - 2];
 let urlImg = ref(null);
-urlImg.value = "../src/assets/img/characters/" + personID.value + ".jpg";
+urlImg.value = "../src/assets/img/characters/" + personID.value + ".png";
 
 let urlPeople = ref(null);
 urlPeople.value = "/people/" + personID.value;
