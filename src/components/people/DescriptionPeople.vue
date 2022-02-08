@@ -29,26 +29,18 @@ const urlImg = computed(
 
 <template>
   <div v-if="loading == true">loading</div>
-  <div
-    v-else-if="onePerson != null"
-    id="character"
-    class="container px-1 md:px-10 md:py-10 flex justify-between mx-auto"
-  >
-    <div class="flex flex-col items-center justify-center">
-      <h2 class="mt-20 text-[20px]">{{ onePerson.name }}</h2>
-      <ul class="mt-20 text-[15px]">
-        <li>Height : {{ onePerson.height }}</li>
-        <li>Mass : {{ onePerson.mass }}</li>
-        <li v-if="onePerson.hair_color != 'n/a'">
-          Hair Color : {{ onePerson.hair_color }}
-        </li>
-        <li>Skin Color : {{ onePerson.skin_color }}</li>
-        <li>Eye Color : {{ onePerson.eye_color }}</li>
-        <li>BirthYear : {{ onePerson.birth_year }}</li>
-        <li v-if="onePerson.gender != 'n/a'">
-          Gender : {{ onePerson.gender }}
-        </li>
-        <li>Home World : {{ nameHomeWorld }}</li>
+  <div v-else-if="onePerson != null" id="character" class="container px-1 md:px-10 md:py-10 flex justify-between mx-auto">
+    <div class="flex flex-col justify-end">
+      <h2 class="text-[30px] items-center">{{ onePerson.name }}</h2>
+      <ul class="m-2 text-[15px]">
+        <li class="m-2">Height : {{ onePerson.height }}</li>
+        <li class="m-2">Mass : {{ onePerson.mass }}</li>
+        <li class="m-2" v-if="onePerson.hair_color != 'n/a'">Hair Color : {{ onePerson.hair_color }}</li>
+        <li class="m-2">Skin Color : {{ onePerson.skin_color }}</li>
+        <li class="m-2">Eye Color : {{ onePerson.eye_color }}</li>
+        <li class="m-2">BirthYear : {{ onePerson.birth_year }}</li>
+        <li class="m-2" v-if="onePerson.gender != 'n/a'">Gender : {{ onePerson.gender }}</li>
+        <li class="m-2">Home World : {{ nameHomeWorld }}</li>
       </ul>
     </div>
     <img class="max-h-[500px] max-w-[420px]" :src="urlImg" alt="" />

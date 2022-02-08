@@ -31,7 +31,6 @@ import Navbar from "./components/Navbar.vue";
   text-align: center;
   color: #FFE81F;
   letter-spacing: 3px;
-  margin-top: 50px;
 }
 body {
   background: url("../public/background.jpg");
