@@ -9,7 +9,7 @@ import DescriptionSpecie from "../components/specie/DescriptionSpecie.vue";
 
 <template>
   <div class="container">
-    <router-view :id="this.$route.params.id"></router-view>
+    <router-view :id="$route.params.id"></router-view>
     <!-- <DescriptionSpecie></DescriptionSpecie> -->
     <ListSpecie />
   </div>

@@ -7,7 +7,7 @@ import ListFilm from "../components/film/ListFilm.vue";
 </script>
 
 <template>
-  <router-view :id="this.$route.params.id"></router-view>
+  <router-view :id="$route.params.id"></router-view>
 
   <ListFilm />
 </template>
