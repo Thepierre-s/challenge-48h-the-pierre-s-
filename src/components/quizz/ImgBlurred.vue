@@ -18,7 +18,7 @@ onMounted(() => {
   <img ref="root" :src="url" alt="" />
 </template>
 
-<style>
+<style scoped>
 img {
   filter: blur(15px);
 }
