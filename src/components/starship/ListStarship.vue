@@ -10,7 +10,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="container w-full p-3 mx-auto flex justify-center">
+  <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex items-center justify-center">
     <CardStarship
       v-for="star in starships"
       :key="star"
