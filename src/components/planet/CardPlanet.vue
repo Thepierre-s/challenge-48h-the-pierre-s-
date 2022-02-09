@@ -11,10 +11,7 @@ let urlPlanet = ref(null);
 urlPlanet.value = "/planets/" + planetID.value;
 
 let imgUrl = computed(
-  () =>
-    "./src/assets/img/planets/" +
-    prop.planet.url.split("/")[prop.planet.url.split("/").length - 2] +
-    ".png"
+  () => "../src/assets/img/planets/" + planetID.value + ".png"
 );
 </script>
 
@@ -22,7 +19,7 @@ let imgUrl = computed(
   <router-link :to="urlPlanet">
     <div v-if="planet != null" class="group w-32 h-64 pt-2 m-2 overflow-hidden">
       <img
-        :src="planet.url_img"
+        :src="imgUrl"
         class="object-cover w-full h-3/4 transition-all delay-150 hover:-translate-y-1 hover:scale-110"
         alt=""
       />

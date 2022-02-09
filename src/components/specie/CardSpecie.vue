@@ -10,10 +10,7 @@ let urlSpecie = ref(null);
 urlSpecie.value = "/species/" + specieID.value;
 
 let imgUrl = computed(
-  () =>
-    "./src/assets/img/species/" +
-    prop.spec.url.split("/")[prop.spec.url.split("/").length - 2] +
-    ".png"
+  () => "../src/assets/img/species/" + specieID.value + ".png"
 );
 </script>
 

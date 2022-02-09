@@ -11,10 +11,7 @@ let urlStarship = ref(null);
 urlStarship.value = "/starships/" + starshipID.value;
 
 let imgUrl = computed(
-  () =>
-    "./src/assets/img/starships/" +
-    prop.starship.url.split("/")[prop.starship.url.split("/").length - 2] +
-    ".png"
+  () => "../src/assets/img/starships/" + starshipID.value + ".png"
 );
 </script>
 

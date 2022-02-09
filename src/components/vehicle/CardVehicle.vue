@@ -12,10 +12,7 @@ let urlVehicle = ref(null);
 urlVehicle.value = "/vehicles/" + vehicleID.value;
 
 let imgUrl = computed(
-  () =>
-    "./src/assets/img/vehicles/" +
-    prop.vehicle.url.split("/")[prop.vehicle.url.split("/").length - 2] +
-    ".png"
+  () => "../src/assets/img/vehicles/" + vehicleID.value + ".png"
 );
 </script>
 
