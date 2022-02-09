@@ -31,9 +31,9 @@ const urlImg = computed(
   <div
     v-else-if="onePerson != null"
     id="character"
-    class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex items-center justify-between"
+    class="max-w-7xl sm:px-6 lg:px-8 flex flex-col-reverse sm:flex-row justify-between mx-auto"
   >
-    <div class="flex flex-col mt-8 justify-end">
+    <div class="sm:w-1/2 flex flex-col mt-8 justify-center">
       <h2 class="text-[30px] items-center">{{ onePerson.name }}</h2>
       <ul class="m-2 text-[15px]">
         <li class="m-2">Height : {{ onePerson.height }}</li>
@@ -50,13 +50,30 @@ const urlImg = computed(
         <li class="m-2">Home World : {{ onePerson.homeworld.name }}</li>
       </ul>
     </div>
-    <img class="max-h-[500px] max-w-[420px]" :src="urlImg" alt="" />
+    <img class="sm:w-1/2 max-h-[500px] max-w-[420px]" :src="urlImg" alt="" />
   </div>
 </template>
 
 <style scoped>
 #character {
   position: relative;
+  --left-position: 0%;
+  --font-txt-bg: 4rem;
+}
+@media screen(sm) {
+  #character {
+    --left-position: 55%;
+    --font-txt-bg: 5.75rem;
+  }
+}
+@media screen(md) {
+  #character {
+    --left-position: 55%;
+    --font-txt-bg: 7rem;
+  }
+  #character::after {
+    z-index: -3 !important;
+  }
 }
 #character::after {
   font-family: "Star Jhol";
@@ -64,7 +81,7 @@ const urlImg = computed(
   position: absolute;
   left: 25%;
   font-size: 6rem;
-  z-index: -3;
+  z-index: 3;
   margin-bottom: 400px;
 }
 </style>
