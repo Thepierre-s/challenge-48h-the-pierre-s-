@@ -28,7 +28,7 @@ const urlImg = computed(() => "../src/assets/img/films/" + props.id + ".png");
   <div v-if="loading == true">loading</div>
   <div
     v-else-if="oneFilm != null"
-    id="character"
+    id="film"
     class="container px-1 md:px-10 md:py-10 flex justify-between mx-auto"
   >
     <div class="flex flex-col justify-end">
@@ -56,12 +56,12 @@ const urlImg = computed(() => "../src/assets/img/films/" + props.id + ".png");
 </template>
 
 <style scoped>
-#character {
+#film {
   position: relative;
 }
-#character::after {
+#film::after {
   font-family: "Star Jhol";
-  content: "The character";
+  content: "film";
   position: absolute;
   left: 25%;
   font-size: 6rem;

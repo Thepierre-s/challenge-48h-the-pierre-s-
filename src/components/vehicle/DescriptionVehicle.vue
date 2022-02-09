@@ -30,7 +30,7 @@ const urlImg = computed(
   <div v-if="loading == true">loading</div>
   <div
     v-else-if="oneVehicle != null"
-    id="character"
+    id="vehicle"
     class="container px-1 md:px-10 md:py-10 flex justify-between mx-auto"
   >
     <div class="flex flex-col justify-end">
@@ -70,12 +70,12 @@ const urlImg = computed(
 </template>
 
 <style scoped>
-#character {
+#vehicle {
   position: relative;
 }
-#character::after {
+#vehicle::after {
   font-family: "Star Jhol";
-  content: "The character";
+  content: "Vehicule";
   position: absolute;
   left: 25%;
   font-size: 6rem;

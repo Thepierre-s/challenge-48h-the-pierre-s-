@@ -21,16 +21,14 @@ watch(async (id) => {
   oneSpecie.value = data.data;
   loading.value = false;
 });
-const urlImg = computed(
-  () => "../src/assets/img/characters/" + props.id + ".png"
-);
+const urlImg = computed(() => "../src/assets/img/species/" + props.id + ".png");
 </script>
 
 <template>
   <div v-if="loading == true">loading</div>
   <div
     v-else-if="oneSpecie != null"
-    id="character"
+    id="specie"
     class="container px-1 md:px-10 md:py-10 flex justify-between mx-auto"
   >
     <div class="flex flex-col justify-end">
@@ -57,12 +55,12 @@ const urlImg = computed(
 </template>
 
 <style scoped>
-#character {
+#specie {
   position: relative;
 }
-#character::after {
+#specie::after {
   font-family: "Star Jhol";
-  content: "The character";
+  content: "specie";
   position: absolute;
   left: 25%;
   font-size: 6rem;
