@@ -8,6 +8,7 @@ import Starship from "../views/Starship.vue";
 import Planet from "../views/Planet.vue";
 import Quizz from "../views/Quizz.vue";
 import DescriptionPeople from "../components/people/DescriptionPeople.vue";
+import Search from "../views/Search.vue";
 const routes = [
   {
     path: "/",
@@ -57,6 +58,12 @@ const routes = [
     name: "Quizz",
     component: Quizz,
   },
+  {
+    path: "/search",
+    name: "Search",
+    component: Search,
+  },
+
 ];
 const router = createRouter({
   history: createWebHistory(),

@@ -8,6 +8,7 @@
     <router-link to="/planets" class="wrap-image text-xl m-10">planets</router-link>
     <router-link to="/films" class="wrap-image text-xl m-10">films</router-link>
     <router-link to="/quizz" class="wrap-image text-xl m-10">quizz</router-link>
+    <router-link to="/search" class="wrap-image text-xl m-10">Search</router-link>
   </div>
 </template>
 
