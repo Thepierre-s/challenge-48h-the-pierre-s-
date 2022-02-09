@@ -18,7 +18,7 @@ async function loadPages(ressource, count, api) {
     temp = temp.concat(tab.data.results);
     console.log(temp);
   }
-  console.log(ressource.value);
+
   ressource.value = ressource.value.concat(temp);
 }
 onMounted(async () => {
