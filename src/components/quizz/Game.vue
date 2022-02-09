@@ -40,7 +40,7 @@ let endGame = ref(false);
 let urlImg = ref();
 
 let counter = ref();
-let timer = ref(15);
+let timer = ref(10);
 
 let round = ref(-1);
 
@@ -74,7 +74,7 @@ function startTour() {
   tourStarted.value = true;
   tourEnded.value = false;
   goodAnswer.value = false;
-  timer.value = 15;
+  timer.value = 10;
 
   counter.value = setInterval(function () {
     timer.value--;
@@ -134,6 +134,7 @@ computed(() => {
       <p>tour : {{ round + 1 }} / {{ state.nbQuestions }}</p>
 
       <button v-if="endGame" @click="seeResults">See results</button>
+      <img src="" alt="" />
       <ImgBlurred v-if="showPicture" :url="urlImg" :blurred="true"></ImgBlurred>
     </div>
   </div>
