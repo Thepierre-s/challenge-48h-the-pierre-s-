@@ -68,7 +68,7 @@ const urlImg = computed(
         <li class="m-2" v-if="oneStarship.starship_class != 'n/a'">
           starship class : {{ oneStarship.starship_class }}
         </li>
-        <li class="m-2">Home World : {{ nameHomeWorld }}</li>
+        <li class="m-2">Manufacturer : {{ oneStarship.manufacturer }}</li>
       </ul>
     </div>
     <img class="max-h-[500px] max-w-[420px]" :src="urlImg" alt="" />

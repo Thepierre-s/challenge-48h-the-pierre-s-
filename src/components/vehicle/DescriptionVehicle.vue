@@ -62,7 +62,7 @@ const urlImg = computed(
         <li class="m-2" v-if="oneVehicle.vehicle_class != 'n/a'">
           vehicle class : {{ oneVehicle.vehicle_class }}
         </li>
-        <li class="m-2">Home World : {{ nameHomeWorld }}</li>
+        <li class="m-2">Home World : {{ oneVehicle.homeworld.name }}</li>
       </ul>
     </div>
     <img class="max-h-[500px] max-w-[420px]" :src="urlImg" alt="" />
@@ -77,7 +77,7 @@ const urlImg = computed(
   font-family: "Star Jhol";
   content: "Vehicule";
   position: absolute;
-  left: 25%;
+  left: 45%;
   font-size: 6rem;
   z-index: -3;
 }

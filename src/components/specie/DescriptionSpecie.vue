@@ -47,7 +47,7 @@ const urlImg = computed(() => "../src/assets/img/species/" + props.id + ".png");
         <li class="m-2" v-if="oneSpecie.language != 'n/a'">
           language : {{ oneSpecie.language }}
         </li>
-        <li class="m-2">Home World : {{ nameHomeWorld }}</li>
+        <li class="m-2">Home World : {{ oneSpecie.homeworld.name }}</li>
       </ul>
     </div>
     <img class="max-h-[500px] max-w-[420px]" :src="urlImg" alt="" />
