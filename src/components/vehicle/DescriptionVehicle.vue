@@ -62,7 +62,6 @@ const urlImg = computed(
         <li class="m-2" v-if="oneVehicle.vehicle_class != 'n/a'">
           vehicle class : {{ oneVehicle.vehicle_class }}
         </li>
-        <li class="m-2">Home World : {{ oneVehicle.homeworld.name }}</li>
       </ul>
     </div>
     <img class="max-h-[500px] max-w-[420px]" :src="urlImg" alt="" />
