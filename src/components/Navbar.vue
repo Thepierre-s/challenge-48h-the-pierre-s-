@@ -4,7 +4,7 @@
     <router-link to="/people/1" class="wrap-image text-xl m-10"
       >people</router-link
     >
-    <router-link to="/starships/1" class="wrap-image text-xl m-10"
+    <router-link to="/starships/2" class="wrap-image text-xl m-10"
       >starship</router-link
     >
     <router-link to="/vehicles/1" class="wrap-image text-xl m-10"
@@ -20,7 +20,9 @@
       >films</router-link
     >
     <router-link to="/quizz" class="wrap-image text-xl m-10">quizz</router-link>
-    <router-link to="/search" class="wrap-image text-xl m-10">Search</router-link>
+    <router-link to="/search" class="wrap-image text-xl m-10"
+      >Search</router-link
+    >
   </div>
 </template>
 

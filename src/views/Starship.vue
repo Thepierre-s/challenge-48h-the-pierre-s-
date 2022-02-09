@@ -7,6 +7,8 @@ import ListStarship from "../components/starship/ListStarship.vue";
 </script>
 
 <template>
+  <router-view :id="this.$route.params.id"></router-view>
+
   <ListStarship />
 </template>
 
