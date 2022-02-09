@@ -4,7 +4,7 @@
 import { ref, onMounted } from "vue";
 import Vehicle from "../components/vehicle/CardVehicle.vue";
 import vehicle from "../service/module/vehicle";
-import ListVehicle from "../components/vehicle/ListVehicle.vue"
+import ListVehicle from "../components/vehicle/ListVehicle.vue";
 let OneVehicle = ref(null);
 onMounted(async () => {
   let i = 4;
@@ -17,6 +17,8 @@ onMounted(async () => {
 </script>
 
 <template>
+  <router-view :id="this.$route.params.id"></router-view>
+
   <ListVehicle />
 </template>
 

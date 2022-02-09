@@ -21,7 +21,7 @@ const showSpecie = computed(() => {
   return species.value?.slice(page.value * 10 - 1, page.value * 10 + 10);
 });
 const nbSlide = computed(() =>
-  Math.floor(count.value / showSpecie.value?.length)
+  Math.floor(count.value / 10)
 );
 
 const showSpecie1 = computed(() => {

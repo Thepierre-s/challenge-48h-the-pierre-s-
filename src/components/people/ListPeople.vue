@@ -34,7 +34,7 @@ const showPeople = computed(() => {
   return people.value?.slice(page.value * 10 - 1, page.value * 10 + 9);
 });
 const nbSlide = computed(() =>
-  Math.floor(countElm.value / showPeople.value?.length)
+  Math.floor(countElm.value / 10)
 );
 function Less() {
   count.value--;
