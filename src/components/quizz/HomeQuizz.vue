@@ -19,7 +19,7 @@ tabCategories.value = [
 
 let urlImg = [
   "../src/assets/img/characters/4.png",
-  "../src/assets/img/films/1.jpg",
+  "../src/assets/img/films/1.png",
   "../src/assets/img/planets/2.png",
   "../src/assets/img/species/3.png",
   "../src/assets/img/starships/5.png",
