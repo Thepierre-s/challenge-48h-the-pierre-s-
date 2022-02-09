@@ -7,6 +7,8 @@ import ListPlanet from "../components/planet/ListPlanet.vue";
 </script>
 
 <template>
+  <router-view :id="this.$route.params.id"></router-view>
+
   <ListPlanet />
 </template>
 

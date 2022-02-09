@@ -4,27 +4,37 @@ import { ref, onMounted, computed } from "vue";
 const prop = defineProps({
   spec: Object,
 });
+let specieID = ref();
+specieID.value = prop.spec.url.split("/")[prop.spec.url.split("/").length - 2];
+let urlSpecie = ref(null);
+urlSpecie.value = "/species/" + specieID.value;
+
 let imgUrl = computed(
-  () =>
-    "./src/assets/img/species/" +
-    prop.spec.url.split("/")[prop.spec.url.split("/").length - 2] +
-    ".png"
+  () => "../src/assets/img/species/" + specieID.value + ".png"
 );
 </script>
 
 <template>
-  <div v-if="spec != null" class="group w-32 h-64 pt-2 m-2 overflow-hidden">
-    <img :src="imgUrl" class="w-full h-3/4 transition-all delay-150 hover:-translate-y-1 hover:scale-110" alt=""/>
-      <p class="h-1/4 invisible group-hover:visible text-sm mt-5">{{ spec.name }}</p>
+  <router-link :to="urlSpecie">
+    <div v-if="spec != null" class="group w-32 h-64 pt-2 m-2 overflow-hidden">
+      <img
+        :src="imgUrl"
+        class="w-full h-3/4 transition-all delay-150 hover:-translate-y-1 hover:scale-110"
+        alt=""
+      />
+      <p class="h-1/4 invisible group-hover:visible text-sm mt-5">
+        {{ spec.name }}
+      </p>
       <!--<p class="text-2xl font-bold">{{ spec.classification }}</p>
       <p class="text-2xl font-bold">{{ spec.designation }}</p> -->
-  </div>
+    </div>
+  </router-link>
 </template>
 
 <style scoped>
 img {
   filter: grayscale(100%);
-  width:100%;
+  width: 100%;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -ms-transition: all 0.2s;
@@ -34,11 +44,11 @@ img {
 img:hover {
   background-color: black;
   filter: grayscale(0);
-  transform:scale(1.2);
+  transform: scale(1.2);
 }
 div:hover {
   background-color: black;
-  border : 2px solid yellow;
-  transform:scale(1.2);
+  border: 2px solid yellow;
+  transform: scale(1.2);
 }
 </style>
