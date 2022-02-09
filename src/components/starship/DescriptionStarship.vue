@@ -31,7 +31,7 @@ const urlImg = computed(
   <div
     v-else-if="oneStarship != null"
     id="starship"
-    class="container px-1 md:px-10 md:py-10 flex flex-col-reverse sm:flex-row justify-between mx-auto"
+    class="max-w-7xl sm:px-6 lg:px-8 flex flex-col-reverse sm:flex-row justify-between mx-auto"
   >
     <div class="sm:w-1/2 flex flex-col justify-end">
       <h2 class="text-[30px] items-center">{{ oneStarship.name }}</h2>

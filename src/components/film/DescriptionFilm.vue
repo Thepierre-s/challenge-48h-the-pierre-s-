@@ -29,9 +29,9 @@ const urlImg = computed(() => "../src/assets/img/films/" + props.id + ".png");
   <div
     v-else-if="oneFilm != null"
     id="film"
-    class="container px-1 md:px-10 md:py-10 flex justify-between mx-auto"
+    class="max-w-7xl sm:px-6 lg:px-8 flex flex-col-reverse sm:flex-row justify-between mx-auto"
   >
-    <div class="flex flex-col justify-end">
+    <div class="sm:w-1/2 flex flex-col justify-end">
       <h2 class="text-[30px] items-center">{{ oneFilm.title }}</h2>
       <ul class="m-2 text-[15px]">
         <li class="m-2" v-if="oneFilm.episode_id != 'n/a'">
@@ -51,20 +51,34 @@ const urlImg = computed(() => "../src/assets/img/films/" + props.id + ".png");
         </li>
       </ul>
     </div>
-    <img class="max-h-[500px] max-w-[420px]" :src="urlImg" alt="" />
+    <img class="sm:w-1/2 max-h-[500px] max-w-[420px]" :src="urlImg" alt="" />
   </div>
 </template>
 
 <style scoped>
 #film {
   position: relative;
+  --font-txt-bg: 5.25rem;
+}
+@media screen(sm) {
+  #film {
+    --left-position: 55%;
+    --font-txt-bg: 6rem;
+  }
+}
+@media screen(md) {
+  #film {
+    --left-position: 55%;
+    --font-txt-bg: 7rem;
+  }
 }
 #film::after {
   font-family: "Star Jhol";
-  content: "film";
+  content: "films";
   position: absolute;
-  left: 25%;
-  font-size: 6rem;
-  z-index: -3;
+  top: var(--top-position);
+  left: var(--left-position);
+  font-size: var(--font-txt-bg);
+  z-index: 3;
 }
 </style>
