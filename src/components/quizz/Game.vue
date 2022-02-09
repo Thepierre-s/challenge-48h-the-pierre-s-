@@ -108,34 +108,47 @@ computed(() => {
 
   <div>
     <div v-if="state.data.elements.length < 1">loading</div>
-    <div v-else>
-      <button v-if="!beginGame" @click="startTour">start</button>
+    <div v-else class="justify-center items-center flex flex-col">
+      <div>
+        <button v-if="!beginGame" @click="startTour">start</button>
 
-      <!--ici composant resultTour-->
-      <div v-if="tourEnded">
-        <button v-if="!endGame" @click="startTour">next picture</button>
-        <p>Réponse : {{ reponse }}</p>
-        <div v-if="goodAnswer">bravo vous avez trouvé !</div>
+        <!--ici composant resultTour-->
+        <div v-if="tourEnded">
+          <button v-if="!endGame" @click="startTour">next picture</button>
+          <p>Réponse : {{ reponse }}</p>
+          <div v-if="goodAnswer">bravo vous avez trouvé !</div>
+        </div>
+        <!--fin composant resultTour-->
+
+        <!--ICI COMPOSANT GUESS-->
+        <div v-if="tourStarted">
+          <p>{{ timer }}</p>
+          <span class="input">
+            <input
+              type="text"
+              v-model="message"
+              placeholder="votre réponse..."
+              autofocus
+              @keyup.enter="submit"
+            />
+            <span></span>
+          </span>
+          <button @click="submit">submit</button>
+          <p v-if="badAnswer">bad answer !</p>
+        </div>
+        <!--fin composanT guess-->
+
+        <p>tour : {{ round + 1 }} / {{ state.nbQuestions }}</p>
+
+        <button v-if="endGame" @click="seeResults">See results</button>
       </div>
-      <!--fin composant resultTour-->
-
-      <!--ICI COMPOSANT GUESS-->
-      <div v-if="tourStarted">
-        <p>{{ timer }}</p>
-        <span class="input">
-          <input type="text" v-model="message" placeholder="votre réponse..." />
-        <span></span>
-        </span>
-        <button @click="submit">submit</button>
-        <p v-if="badAnswer">bad answer !</p>
+      <div>
+        <ImgBlurred
+          v-if="showPicture"
+          :url="urlImg"
+          :blurred="true"
+        ></ImgBlurred>
       </div>
-      <!--fin composanT guess-->
-
-      <p>tour : {{ round + 1 }} / {{ state.nbQuestions }}</p>
-
-      <button v-if="endGame" @click="seeResults">See results</button>
-      <img src="" alt="" />
-      <ImgBlurred v-if="showPicture" :url="urlImg" :blurred="true"></ImgBlurred>
     </div>
   </div>
 </template>
@@ -176,11 +189,13 @@ computed(() => {
   bottom: 0;
   border-radius: inherit;
   pointer-events: none;
-  box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #1beabd, -3px 3px 30px #10abff;
+  box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #1beabd,
+    -3px 3px 30px #10abff;
 }
 
 html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.5;
   font-size: 1em;
 }
@@ -192,7 +207,8 @@ body {
   justify-content: center;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
