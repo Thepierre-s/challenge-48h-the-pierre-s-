@@ -1,11 +1,21 @@
 <template>
   <div class="m-8">
     <router-link to="/" class="wrap-image text-xl m-10">home</router-link>
-    <router-link to="/people" class="wrap-image text-xl m-10">people</router-link>
-    <router-link to="/starships" class="wrap-image text-xl m-10">starship</router-link>
-    <router-link to="/vehicle" class="wrap-image text-xl m-10">vehicles</router-link>
-    <router-link to="/species" class="wrap-image text-xl m-10">species</router-link>
-    <router-link to="/planets" class="wrap-image text-xl m-10">planets</router-link>
+    <router-link to="/people/1" class="wrap-image text-xl m-10"
+      >people</router-link
+    >
+    <router-link to="/starships" class="wrap-image text-xl m-10"
+      >starship</router-link
+    >
+    <router-link to="/vehicle" class="wrap-image text-xl m-10"
+      >vehicles</router-link
+    >
+    <router-link to="/species" class="wrap-image text-xl m-10"
+      >species</router-link
+    >
+    <router-link to="/planets" class="wrap-image text-xl m-10"
+      >planets</router-link
+    >
     <router-link to="/films" class="wrap-image text-xl m-10">films</router-link>
     <router-link to="/quizz" class="wrap-image text-xl m-10">quizz</router-link>
     <router-link to="/search" class="wrap-image text-xl m-10">Search</router-link>
@@ -27,7 +37,8 @@ html {
   position: relative;
   padding: 1px 8px;
 }
-.wrap-image::before, .wrap-image::after {
+.wrap-image::before,
+.wrap-image::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -37,7 +48,7 @@ html {
   transition: all 0.25s ease-out;
 }
 .wrap-image::before {
-  background-color: #FF0000;
+  background-color: #ff0000;
   top: -1px;
   left: -1px;
   opacity: 35%;
