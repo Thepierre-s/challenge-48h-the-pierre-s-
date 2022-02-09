@@ -18,6 +18,12 @@ import Navbar from "./components/Navbar.vue";
     url("/font/starjedi-webfont.woff") format("woff"),
     url("/font/starjedi.ttf") format("ttf");
 }
+@font-face {
+  font-family: "Star Jhol";
+  src:  url("/font/starjhol-webfont.woff2") format("woff2"),
+        url("/font/starjhol-webfont.woff") format("woff"),
+        url("/font/starjhol.ttf") format("ttf");
+}
 #app {
   font-family: "Star Jedi";
   -webkit-font-smoothing: antialiased;
@@ -25,7 +31,6 @@ import Navbar from "./components/Navbar.vue";
   text-align: center;
   color: #ffe81f;
   letter-spacing: 3px;
-  margin-top: 50px;
 }
 body {
   background: url("../public/background.jpg");
