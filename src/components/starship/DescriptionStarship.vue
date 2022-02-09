@@ -94,6 +94,9 @@ const urlImg = computed(
     --left-position: 55%;
     --font-txt-bg: 7rem;
   }
+  #starship::after {
+    z-index: -3 !important;
+  }
 }
 #starship::after {
   font-family: "Star Jhol";
@@ -102,6 +105,6 @@ const urlImg = computed(
   top: var(--top-position);
   left: var(--left-position);
   font-size: var(--font-txt-bg);
-  z-index: -3;
+  z-index: 3;
 }
 </style>
