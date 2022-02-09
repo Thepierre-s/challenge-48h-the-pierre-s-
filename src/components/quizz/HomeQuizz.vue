@@ -1,5 +1,5 @@
 <script setup>
-import { ref, inject, onMounted } from "vue";
+import { ref, inject, onMounted, computed } from "vue";
 import People from "../../service/module/people";
 import Film from "../../service/module/film";
 import planet from "../../service/module/planet";
@@ -16,6 +16,15 @@ tabCategories.value = [
   "starships",
   "vehicules",
 ];
+
+let urlImg = [
+  "../src/assets/img/characters/4.png",
+  "../src/assets/img/films/1.jpg",
+  "../src/assets/img/planets/2.png",
+  "../src/assets/img/species/3.png",
+  "../src/assets/img/starships/5.png",
+  "../src/assets/img/vehicles/26.png",
+]
 
 let category = ref();
 category.value = "people";
@@ -97,12 +106,62 @@ async function StartGame() {
 </script>
 
 <template>
-  <h1>muizz : What is this ?</h1>
+  <h1>quizz : What is this ?</h1>
   <p>Select a category</p>
-  <div class="flex justify-center">
-    <div class="m-2" v-for="category in tabCategories" :key="category">
-      <button @click="ChooseCat(category)">{{ category }}</button>
+  <div class="m-10 h-62 flex justify-center">
+    <div class="truc text-xl m-10 group overflow-hidden" v-for="(category,index) in tabCategories" :key="category">
+      <button class="h-1/5 wrap-image group-hover:visible" @click="ChooseCat(category)">{{ category }}</button>
+      <img class="w-full h-4/5 m-5 group-hover:visible filter-none rounded-3xl" :src="urlImg[index]"/>
     </div>
   </div>
-  <button @click="StartGame">Jouer</button>
+  <button class="wrap-image text-4xl" @click="StartGame">Jouer</button>
 </template>
+
+<style scoped>
+div.truc:hover {
+  
+  background-color: black;
+  border : 2px solid yellow;
+  border-radius: 100px;
+  transform:scale(1.2);
+}
+h1 {
+  font-size: 100px;
+  margin: 50px;
+}
+p {
+  margin: 50px;
+  font-size: 50px;
+}
+.wrap-image {
+  position: relative;
+  padding: 1px 8px;
+}
+.wrap-image::before, .wrap-image::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  border: 2px solid blue;
+  transition: all 0.25s ease-out;
+}
+.wrap-image::before {
+  background-color: #FF0000;
+  top: -1px;
+  left: -1px;
+  opacity: 35%;
+}
+.wrap-image::after {
+  bottom: -1px;
+  right: -1px;
+}
+.wrap-image:hover::before {
+  top: 5px;
+  left: 5px;
+}
+.wrap-image:hover::after {
+  bottom: 5px;
+  right: 5px;
+}
+</style>
