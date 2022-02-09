@@ -31,9 +31,9 @@ const urlImg = computed(
   <div
     v-else-if="oneStarship != null"
     id="starship"
-    class="container px-1 md:px-10 md:py-10 flex justify-between mx-auto"
+    class="max-w-7xl sm:px-6 lg:px-8 flex flex-col-reverse sm:flex-row justify-between mx-auto"
   >
-    <div class="flex flex-col justify-end">
+    <div class="sm:w-1/2 flex flex-col justify-end">
       <h2 class="text-[30px] items-center">{{ oneStarship.name }}</h2>
       <ul class="m-2 text-[15px]">
         <li class="m-2">model : {{ oneStarship.model }}</li>
@@ -68,10 +68,14 @@ const urlImg = computed(
         <li class="m-2" v-if="oneStarship.starship_class != 'n/a'">
           starship class : {{ oneStarship.starship_class }}
         </li>
-        <li class="m-2">Home World : {{ nameHomeWorld }}</li>
+        <li class="m-2">Manufacturer : {{ oneStarship.manufacturer }}</li>
       </ul>
     </div>
-    <img class="max-h-[500px] max-w-[420px]" :src="urlImg" alt="" />
+    <img
+      class="sm:w-1/2 md:max-h-[500px] md:max-w-[420px]"
+      :src="urlImg"
+      alt=""
+    />
   </div>
 </template>
 
@@ -79,12 +83,28 @@ const urlImg = computed(
 #starship {
   position: relative;
 }
+@media screen(sm) {
+  #starship {
+    --left-position: 55%;
+    --font-txt-bg: 6rem;
+  }
+}
+@media screen(md) {
+  #starship {
+    --left-position: 55%;
+    --font-txt-bg: 7rem;
+  }
+  #starship::after {
+    z-index: -3 !important;
+  }
+}
 #starship::after {
   font-family: "Star Jhol";
   content: "starship";
   position: absolute;
-  left: 25%;
-  font-size: 6rem;
-  z-index: -3;
+  top: var(--top-position);
+  left: var(--left-position);
+  font-size: var(--font-txt-bg);
+  z-index: 3;
 }
 </style>

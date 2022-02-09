@@ -15,7 +15,6 @@ async function loadPages(ressource, count, api) {
     let tab = await api(i);
 
     temp = temp.concat(tab.data.results);
-    console.log(temp);
   }
   ressource.value = ressource.value.concat(temp);
 }
@@ -23,7 +22,6 @@ onMounted(async () => {
   let data = await Starship.listStarship();
   starships.value = data.data.results;
   countElm.value = data?.data.count;
-  starships.value = data.data.results;
 
   await loadPages(starships, countElm, Starship.listStarship);
 });
