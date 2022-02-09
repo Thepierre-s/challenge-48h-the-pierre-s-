@@ -79,8 +79,9 @@ const urlImg = computed(
   font-family: "Star Jhol";
   content: "character";
   position: absolute;
-  left: 25%;
-  font-size: 6rem;
+  top: var(--top-position);
+  left: var(--left-position);
+  font-size: var(--font-txt-bg);
   z-index: 3;
   margin-bottom: 400px;
 }
