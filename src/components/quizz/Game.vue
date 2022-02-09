@@ -66,7 +66,7 @@ function startTour() {
     category.value +
     "/" +
     state.data.elements[round.value].id +
-    ".jpg";
+    ".png";
 
   reponse.value = state.data.elements[round.value].name;
   showPicture.value = true;
@@ -134,7 +134,7 @@ computed(() => {
       <p>tour : {{ round + 1 }} / {{ state.nbQuestions }}</p>
 
       <button v-if="endGame" @click="seeResults">See results</button>
-      <ImgBlurred v-if="showPicture" :url="urlImg"></ImgBlurred>
+      <ImgBlurred v-if="showPicture" :url="urlImg" :blurred="true"></ImgBlurred>
     </div>
   </div>
 </template>

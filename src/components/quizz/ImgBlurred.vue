@@ -2,6 +2,7 @@
 import { ref, onMounted, watch, computed } from "vue";
 const props = defineProps({
   url: String,
+  blurred: Boolean,
 });
 const root = ref(null);
 
@@ -20,9 +21,9 @@ onMounted(() => {
 <style>
 img {
   filter: blur(15px);
-  transition: all 10s ease;
 }
 .not_blurred {
   filter: blur(0px);
+  transition: all 14s ease;
 }
 </style>
