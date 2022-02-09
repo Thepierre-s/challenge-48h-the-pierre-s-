@@ -15,7 +15,6 @@ async function loadPages(ressource, count, api) {
     let tab = await api(i);
 
     temp = temp.concat(tab.data.results);
-    console.log(temp);
   }
 
   ressource.value = ressource.value.concat(temp);

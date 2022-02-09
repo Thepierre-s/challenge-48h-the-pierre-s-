@@ -5,7 +5,7 @@ const { state, setStateProp } = inject("state");
 </script>
 <template>
   <p>Mon Score : {{ state.score.points }} / {{ state.nbQuestions }}</p>
-  <button @click="submitScore">Ajouter mon score</button>
-  <input v-model="registerScore" placeholder="votre pseudo" />
+  <!-- <button @click="submitScore">Ajouter mon score</button>
+  <input v-model="registerScore" placeholder="votre pseudo" /> -->
   <Restart></Restart>
 </template>

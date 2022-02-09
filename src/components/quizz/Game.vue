@@ -10,7 +10,6 @@ onMounted(() => {
   state.data.elements.length > 1;
   loading.value = false;
 });
-console.log(state.data.elements.length);
 const category = ref(state.data.category);
 if (category.value == "people") {
   category.value = "characters";
@@ -40,7 +39,7 @@ let endGame = ref(false);
 let urlImg = ref();
 
 let counter = ref();
-let timer = ref(15);
+let timer = ref(10);
 
 let round = ref(-1);
 
@@ -74,7 +73,7 @@ function startTour() {
   tourStarted.value = true;
   tourEnded.value = false;
   goodAnswer.value = false;
-  timer.value = 15;
+  timer.value = 10;
 
   counter.value = setInterval(function () {
     timer.value--;
@@ -97,12 +96,10 @@ function submit() {
 
 function seeResults() {
   state.score.valid = true;
-  console.log(state.score.points);
 }
 
 computed(() => {
   let root = document.querySelector(".blurred");
-  console.log(root);
   root.classList.toggle("not_blurred");
 });
 </script>
@@ -134,6 +131,7 @@ computed(() => {
       <p>tour : {{ round + 1 }} / {{ state.nbQuestions }}</p>
 
       <button v-if="endGame" @click="seeResults">See results</button>
+      <img src="" alt="" />
       <ImgBlurred v-if="showPicture" :url="urlImg" :blurred="true"></ImgBlurred>
     </div>
   </div>
