@@ -30,7 +30,6 @@ let category = ref();
 category.value = "people";
 function ChooseCat(cat) {
   category.value = cat;
-  console.log(category.value);
 }
 const { state, setStateProp } = inject("state");
 
@@ -70,7 +69,6 @@ async function getRandomElement(funclist, count) {
     }
   }
 
-  console.log(randomPickup.value);
   return randomPickup.value;
 }
 
@@ -101,7 +99,6 @@ async function StartGame() {
     await generatElement(Starship.listStarship);
   }
 
-  console.log(state.data["elements"]);
 }
 </script>
 

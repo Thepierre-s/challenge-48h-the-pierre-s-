@@ -26,7 +26,8 @@ html {
   position: relative;
   padding: 1px 8px;
 }
-.wrap-image::before, .wrap-image::after {
+.wrap-image::before,
+.wrap-image::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -36,7 +37,7 @@ html {
   transition: all 0.25s ease-out;
 }
 .wrap-image::before {
-  background-color: #FF0000;
+  background-color: #ff0000;
   top: -1px;
   left: -1px;
   opacity: 35%;

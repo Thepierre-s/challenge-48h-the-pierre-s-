@@ -20,9 +20,9 @@ import Navbar from "./components/Navbar.vue";
 }
 @font-face {
   font-family: "Star Jhol";
-  src:  url("/font/starjhol-webfont.woff2") format("woff2"),
-        url("/font/starjhol-webfont.woff") format("woff"),
-        url("/font/starjhol.ttf") format("ttf");
+  src: url("/font/starjhol-webfont.woff2") format("woff2"),
+    url("/font/starjhol-webfont.woff") format("woff"),
+    url("/font/starjhol.ttf") format("ttf");
 }
 #app {
   font-family: "Star Jedi";
@@ -35,5 +35,11 @@ import Navbar from "./components/Navbar.vue";
 body {
   background: url("../public/background.jpg");
   background-size: auto;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 </style>
