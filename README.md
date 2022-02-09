@@ -12,6 +12,8 @@ Commande à utiliser pour mettre à jour le site :
 
 "npm install" Installation de npm.
 
-"npm run build" 
+"npm run build"
 
 "sudo systemctl restart apache2" Restart du service apache.
+
+> Le dossier `img` a été importé du [Repository Git](https://github.com/tbone849/star-wars-guide) de Tim Sarvey et mis à jour avec les photos manquantes.

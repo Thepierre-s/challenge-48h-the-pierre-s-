@@ -14,7 +14,7 @@ tabCategories.value = [
   "planets",
   "species",
   "starships",
-  "vehicules",
+  "vehicles",
 ];
 
 let urlImg = [
@@ -24,7 +24,7 @@ let urlImg = [
   "../src/assets/img/species/3.png",
   "../src/assets/img/starships/5.png",
   "../src/assets/img/vehicles/26.png",
-]
+];
 
 let category = ref();
 category.value = "people";
@@ -93,40 +93,52 @@ async function StartGame() {
     await generatElement(planet.listPlanet);
   } else if (category.value === "species") {
     await generatElement(Specie.listSpecie);
-  } else if (category.value === "vehicules") {
+  } else if (category.value === "vehicles") {
     await generatElement(Vehicle.listVehicle);
   } else if (category.value === "starships") {
     await generatElement(Starship.listStarship);
   }
-
 }
 </script>
 
 <template>
   <h1>quizz : What is this ?</h1>
-  <p>Select a category</p>
+  <p class="title">Select a category</p>
   <div class="m-10 h-62 flex justify-center">
-    <div class="truc text-xl m-10 group overflow-hidden" v-for="(category,index) in tabCategories" :key="category">
-      <button class="h-1/5 wrap-image group-hover:visible" @click="ChooseCat(category)">{{ category }}</button>
-      <img class="w-full h-4/5 m-5 group-hover:visible filter-none rounded-3xl" :src="urlImg[index]"/>
+    <div
+      class="truc text-xl m-10 group overflow-hidden"
+      v-for="(category, index) in tabCategories"
+      :key="category"
+      @click="ChooseCat(category)"
+    >
+      <button class="h-1/5 wrap-image group-hover:visible category">
+        {{ category }}
+      </button>
+      <img
+        class="w-full h-4/5 m-5 group-hover:visible filter-none rounded-3xl"
+        :src="urlImg[index]"
+      />
     </div>
   </div>
+  <p class="text-base mb-6">Catégorie choisie : {{ category }}</p>
   <button class="wrap-image text-4xl" @click="StartGame">Jouer</button>
 </template>
 
 <style scoped>
 div.truc:hover {
-  
   background-color: black;
-  border : 2px solid yellow;
+  border: 2px solid yellow;
   border-radius: 100px;
-  transform:scale(1.2);
+  transform: scale(1.2);
+}
+button :active {
+  background-color: yellow;
 }
 h1 {
   font-size: 100px;
   margin: 50px;
 }
-p {
+p.title {
   margin: 50px;
   font-size: 50px;
 }
@@ -134,7 +146,8 @@ p {
   position: relative;
   padding: 1px 8px;
 }
-.wrap-image::before, .wrap-image::after {
+.wrap-image::before,
+.wrap-image::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -144,7 +157,7 @@ p {
   transition: all 0.25s ease-out;
 }
 .wrap-image::before {
-  background-color: #FF0000;
+  background-color: #ff0000;
   top: -1px;
   left: -1px;
   opacity: 35%;
