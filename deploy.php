@@ -1,3 +1,5 @@
 <?php
-echo 'test1'
+  echo 'test1';
+  $commands = 'git pull';
+
 ?>
