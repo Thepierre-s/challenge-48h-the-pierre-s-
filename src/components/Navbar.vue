@@ -40,6 +40,9 @@ const isMobile = ref(false);
         <router-link to="/starships" class="wrap-image text-xl m-10"
           >starship</router-link
         >
+        <router-link to="/search" class="wrap-image text-xl m-10"
+          >search</router-link
+        >
       </div>
     </div>
 
@@ -92,6 +95,9 @@ const isMobile = ref(false);
         >
         <router-link to="/starships" class="wrap-image text-xl m-10"
           >starship</router-link
+        >
+        <router-link to="/search" class="wrap-image text-xl m-10"
+          >search</router-link
         >
       </div>
     </div>
