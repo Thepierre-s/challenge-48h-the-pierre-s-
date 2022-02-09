@@ -14,6 +14,7 @@ import DescriptionVehicle from "../components/vehicle/DescriptionVehicle.vue";
 import DescriptionPlanet from "../components/planet/DescriptionPlanet.vue";
 import DescriptionFilm from "../components/film/DescriptionFilm.vue";
 
+import Search from "../views/Search.vue";
 const routes = [
   {
     path: "/",
@@ -97,6 +98,11 @@ const routes = [
     path: "/quizz",
     name: "Quizz",
     component: Quizz,
+  },
+  {
+    path: "/search",
+    name: "Search",
+    component: Search,
   },
 ];
 const router = createRouter({
