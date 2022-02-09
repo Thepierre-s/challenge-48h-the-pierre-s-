@@ -8,17 +8,17 @@ let species = ref(null);
 let count = ref(null);
 onMounted(async () => {
   let data = await Specie.listSpecie();
-  count.value = data.data.count;
+  count.value = data?.data.count;
   species.value = data.data.results;
-  data = await Specie.listSpecie(2);
-
-  species.value = species.value.concat(data.data.results);
+  let tab1 = await Specie.listSpecie(2);
+  let tab2 = await Specie.listSpecie(2);
+  species.value = species.value.concat(tab1.data.results, tab2.data.results);
 });
-const page = ref(1);
+const page = ref(0);
 
 const showSpecie = computed(() => {
-  if (page.value == 0) return species.value?.slice(page - 1, 10);
-  return species.value?.slice(0, page.value * 9);
+  if (page.value == 0) return species.value?.slice(page, 10);
+  return species.value?.slice(page.value * 10 - 1, page.value * 10 + 10);
 });
 const nbSlide = computed(() =>
   Math.floor(count.value / showSpecie.value?.length)
@@ -29,6 +29,10 @@ const showSpecie1 = computed(() => {
 });
 
 const carrouselSlide = ref([1, 2, 3]);
+function getChangeSlide(slide) {
+  console.log("ici");
+  page.value = slide;
+}
 </script>
 
 <template>
@@ -76,11 +80,15 @@ const carrouselSlide = ref([1, 2, 3]);
   </div> -->
 
   <div>
-    <Carrousel v-slot="{ currentSlide }" :getcurrentSlide="nbSlide">
-      <Slide v-for="(slide, index) in carrouselSlide" :key="slide">
+    <Carrousel
+      v-slot="{ currentSlide }"
+      :getSlideCount="nbSlide"
+      @changeSlide="getChangeSlide"
+    >
+      <Slide v-for="n in nbSlide" :key="n">
         <div
           class="absolute top-0 left-0 w-full max-h-full h-full flex justify-center"
-          v-show="currentSlide === index"
+          v-show="currentSlide === n - 1"
         >
           <CardSpecie
             v-for="specie in showSpecie"

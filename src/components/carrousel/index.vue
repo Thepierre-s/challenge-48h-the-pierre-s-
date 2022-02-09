@@ -6,21 +6,27 @@ const prop = defineProps({
   getSlideCount: Number,
 });
 
+const emits = defineEmits(["changeSlide"]);
+
 function nextSlide() {
-  if (currentSlide.value === prop.getSlideCount) {
-    currentSlide.value = 1;
+  if (currentSlide.value === prop.getSlideCount - 1) {
+    currentSlide.value = 0;
+    emits("changeSlide", currentSlide.value);
     return;
   }
+
   currentSlide.value += 1;
+  emits("changeSlide", currentSlide.value);
 }
 
 function prevSlide() {
-  console.log("ici");
   if (currentSlide.value === 0) {
     currentSlide.value = 0;
+    emits("changeSlide", currentSlide.value);
     return;
   }
   currentSlide.value -= 1;
+  emits("changeSlide", currentSlide.value);
 }
 </script>
 
