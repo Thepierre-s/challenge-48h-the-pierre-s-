@@ -10,7 +10,6 @@ onMounted(() => {
   state.data.elements.length > 1;
   loading.value = false;
 });
-console.log(state.data.elements.length);
 const category = ref(state.data.category);
 if (category.value == "people") {
   category.value = "characters";
@@ -97,12 +96,10 @@ function submit() {
 
 function seeResults() {
   state.score.valid = true;
-  console.log(state.score.points);
 }
 
 computed(() => {
   let root = document.querySelector(".blurred");
-  console.log(root);
   root.classList.toggle("not_blurred");
 });
 </script>

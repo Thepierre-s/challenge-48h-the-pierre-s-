@@ -10,9 +10,7 @@ onMounted(async () => {
   let i = 4;
 
   let data = await vehicle.getVehicleById(i);
-  console.log(data.data);
   OneVehicle.value = data.data;
-  console.log(OneVehicle.value);
 });
 </script>
 

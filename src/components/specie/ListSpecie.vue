@@ -30,7 +30,6 @@ const showSpecie1 = computed(() => {
 
 const carrouselSlide = ref([1, 2, 3]);
 function getChangeSlide(slide) {
-  console.log("ici");
   page.value = slide;
 }
 </script>
