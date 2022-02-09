@@ -27,6 +27,10 @@ const routes = [
     component: People,
     children: [
       {
+        path: "",
+        redirect: "/people/1",
+      },
+      {
         path: ":id",
         component: DescriptionPeople,
         props: true,
@@ -38,6 +42,10 @@ const routes = [
     name: "Species",
     component: Specie,
     children: [
+      {
+        path: "",
+        redirect: "/species/1",
+      },
       {
         path: ":id",
         component: DescriptionSpecie,
@@ -51,6 +59,10 @@ const routes = [
     component: Starship,
     children: [
       {
+        path: "",
+        redirect: "/starships/2",
+      },
+      {
         path: ":id",
         component: DescriptionStarship,
         props: true,
@@ -62,6 +74,10 @@ const routes = [
     name: "Planets",
     component: Planet,
     children: [
+      {
+        path: "",
+        redirect: "/planets/1",
+      },
       {
         path: ":id",
         component: DescriptionPlanet,
@@ -76,6 +92,10 @@ const routes = [
     component: Film,
     children: [
       {
+        path: "",
+        redirect: "/films/1",
+      },
+      {
         path: ":id",
         component: DescriptionFilm,
         props: true,
@@ -87,6 +107,10 @@ const routes = [
     name: "Vehicles",
     component: Vehicle,
     children: [
+      {
+        path: "",
+        redirect: "/vehicles/4",
+      },
       {
         path: ":id",
         component: DescriptionVehicle,
