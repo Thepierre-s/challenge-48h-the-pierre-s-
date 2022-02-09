@@ -23,7 +23,6 @@ onMounted(async () => {
   let data = await Starship.listStarship();
   starships.value = data.data.results;
   countElm.value = data?.data.count;
-  starships.value = data.data.results;
 
   await loadPages(starships, countElm, Starship.listStarship);
 });
