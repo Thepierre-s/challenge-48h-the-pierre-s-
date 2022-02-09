@@ -56,7 +56,6 @@ function endTourFunc() {
     endGame.value = true;
   }
 }
-
 function startTour() {
   round.value++;
 

@@ -14,7 +14,7 @@ tabCategories.value = [
   "planets",
   "species",
   "starships",
-  "vehicules",
+  "vehicles",
 ];
 
 let urlImg = [
@@ -93,7 +93,7 @@ async function StartGame() {
     await generatElement(planet.listPlanet);
   } else if (category.value === "species") {
     await generatElement(Specie.listSpecie);
-  } else if (category.value === "vehicules") {
+  } else if (category.value === "vehicles") {
     await generatElement(Vehicle.listVehicle);
   } else if (category.value === "starships") {
     await generatElement(Starship.listStarship);
