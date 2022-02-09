@@ -70,7 +70,7 @@ const carrouselSlide = ref([1, 2, 3]);
     <Carrousel v-slot="{ currentSlide }">
       <Slide v-for="(slide, index) in carrouselSlide" :key="slide">
         <div
-          class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex items-center justify-center"
+          class="absolute top-0 left-0 w-full max-h-full h-full flex justify-center"
           v-show="currentSlide === index"
         >
           <template v-if="slide == 1">
