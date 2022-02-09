@@ -19,7 +19,7 @@ urlPeople.value = "/people/" + personID.value;
   <router-link :to="urlPeople">
     <div class="group w-32 h-64 pt-2 m-2 overflow-hidden">
       <p class="h-1/4 invisible group-hover:visible text-sm mb-5">{{ person.name }}</p>
-      <img class="w-full h-3/4 transition-all delay-150 hover:-translate-y-1 hover:scale-110" :src="urlImg" />
+      <img class="object-cover w-full h-3/4 transition-all delay-150 hover:-translate-y-1 hover:scale-110" :src="urlImg" />
     </div>
   </router-link>
 </template>
