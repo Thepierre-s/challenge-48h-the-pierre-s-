@@ -4,13 +4,13 @@
 import { ref, onMounted } from "vue";
 
 import ListSpecie from "../components/specie/ListSpecie.vue";
-
-import DetailsSpecie from "../components/specie/DetailsSpecie.vue";
+import DescriptionSpecie from "../components/specie/DescriptionSpecie.vue";
 </script>
 
 <template>
   <div class="container">
-    <DetailsSpecie></DetailsSpecie>
+    <router-view :id="this.$route.params.id"></router-view>
+    <!-- <DescriptionSpecie></DescriptionSpecie> -->
     <ListSpecie />
   </div>
 </template>

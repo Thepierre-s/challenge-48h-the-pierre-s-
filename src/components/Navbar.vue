@@ -4,19 +4,21 @@
     <router-link to="/people/1" class="wrap-image text-xl m-10"
       >people</router-link
     >
-    <router-link to="/starships" class="wrap-image text-xl m-10"
+    <router-link to="/starships/1" class="wrap-image text-xl m-10"
       >starship</router-link
     >
-    <router-link to="/vehicle" class="wrap-image text-xl m-10"
+    <router-link to="/vehicles/1" class="wrap-image text-xl m-10"
       >vehicles</router-link
     >
-    <router-link to="/species" class="wrap-image text-xl m-10"
+    <router-link to="/species/1" class="wrap-image text-xl m-10"
       >species</router-link
     >
-    <router-link to="/planets" class="wrap-image text-xl m-10"
+    <router-link to="/planets/1" class="wrap-image text-xl m-10"
       >planets</router-link
     >
-    <router-link to="/films" class="wrap-image text-xl m-10">films</router-link>
+    <router-link to="/films/1" class="wrap-image text-xl m-10"
+      >films</router-link
+    >
     <router-link to="/quizz" class="wrap-image text-xl m-10">quizz</router-link>
   </div>
 </template>

@@ -4,6 +4,11 @@ import { ref, onMounted, computed } from "vue";
 const prop = defineProps({
   spec: Object,
 });
+let specieID = ref();
+specieID.value = prop.spec.url.split("/")[prop.spec.url.split("/").length - 2];
+let urlSpecie = ref(null);
+urlSpecie.value = "/species/" + specieID.value;
+
 let imgUrl = computed(
   () =>
     "./src/assets/img/species/" +
@@ -13,18 +18,20 @@ let imgUrl = computed(
 </script>
 
 <template>
-  <div v-if="spec != null" class="w-72 h-72 m-2 shadow-md rounded-sm">
-    <img
-      :src="imgUrl"
-      class="w-full h-2/3 border-2 border-b-yellow-400"
-      alt=""
-    />
-    <div class="w-full h-1/3">
-      <p class="text-3xl font-bold font-gray-200">{{ spec.name }}</p>
-      <p class="text-2xl font-bold">{{ spec.classification }}</p>
-      <p class="text-2xl font-bold">{{ spec.designation }}</p>
+  <router-link :to="urlSpecie">
+    <div v-if="spec != null" class="w-72 h-72 m-2 shadow-md rounded-sm">
+      <img
+        :src="imgUrl"
+        class="w-full h-2/3 border-2 border-b-yellow-400"
+        alt=""
+      />
+      <div class="w-full h-1/3">
+        <p class="text-3xl font-bold font-gray-200">{{ spec.name }}</p>
+        <p class="text-2xl font-bold">{{ spec.classification }}</p>
+        <p class="text-2xl font-bold">{{ spec.designation }}</p>
+      </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <style scoped>
