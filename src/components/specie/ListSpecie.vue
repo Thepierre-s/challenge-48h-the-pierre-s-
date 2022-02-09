@@ -5,16 +5,25 @@ import Specie from "../../service/module/specie";
 import Carrousel from "../carrousel/index.vue";
 import Slide from "../carrousel/Slide.vue";
 let species = ref(null);
+let count = ref(null);
 onMounted(async () => {
   let data = await Specie.listSpecie();
+  count.value = data.data.count;
   species.value = data.data.results;
+  data = await Specie.listSpecie(2);
+
+  species.value = species.value.concat(data.data.results);
 });
-const page = ref(0);
+const page = ref(1);
 
 const showSpecie = computed(() => {
-  if (page.value == 0) return species.value?.slice(page, 5);
-  return species.value?.slice(0, 5 + page.value * 5);
+  if (page.value == 0) return species.value?.slice(page - 1, 10);
+  return species.value?.slice(0, page.value * 9);
 });
+const nbSlide = computed(() =>
+  Math.floor(count.value / showSpecie.value?.length)
+);
+
 const showSpecie1 = computed(() => {
   return species.value?.slice(5, 10);
 });
@@ -67,26 +76,17 @@ const carrouselSlide = ref([1, 2, 3]);
   </div> -->
 
   <div>
-    <Carrousel v-slot="{ currentSlide }">
+    <Carrousel v-slot="{ currentSlide }" :getcurrentSlide="nbSlide">
       <Slide v-for="(slide, index) in carrouselSlide" :key="slide">
         <div
           class="absolute top-0 left-0 w-full max-h-full h-full flex justify-center"
           v-show="currentSlide === index"
         >
-          <template v-if="slide == 1">
-            <CardSpecie
-              v-for="specie in showSpecie"
-              :key="specie"
-              :spec="specie"
-            ></CardSpecie>
-          </template>
-          <template v-if="slide == 2">
-            <CardSpecie
-              v-for="specie in showSpecie1"
-              :key="specie"
-              :spec="specie"
-            ></CardSpecie>
-          </template>
+          <CardSpecie
+            v-for="specie in showSpecie"
+            :key="specie"
+            :spec="specie"
+          ></CardSpecie>
         </div>
       </Slide>
     </Carrousel>
