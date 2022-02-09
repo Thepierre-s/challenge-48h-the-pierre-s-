@@ -64,11 +64,7 @@ const urlImg = computed(
         </li>
       </ul>
     </div>
-    <img
-      class="max-h-[500px] max-w-[420px] object-cover"
-      :src="urlImg"
-      alt=""
-    />
+    <img class="sm:w-1/2max-h-[500px] max-w-[420px]" :src="urlImg" alt="" />
   </div>
 </template>
 
