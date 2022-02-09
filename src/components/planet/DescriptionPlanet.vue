@@ -29,9 +29,9 @@ const urlImg = computed(() => "../src/assets/img/planets/" + props.id + ".png");
   <div
     v-else-if="onePlanet != null"
     id="planet"
-    class="container px-1 md:px-10 md:py-10 flex justify-between mx-auto"
+    class="container px-1 md:px-10 md:py-10 flex flex-col-reverse sm:flex-row justify-between mx-auto"
   >
-    <div class="flex flex-col justify-end">
+    <div class="sm:w-1/2 flex flex-col justify-end">
       <h2 class="text-[30px] items-center">{{ onePlanet.name }}</h2>
       <ul class="m-2 text-[15px]">
         <li class="m-2">rotation_period : {{ onePlanet.rotation_period }}</li>
@@ -56,20 +56,37 @@ const urlImg = computed(() => "../src/assets/img/planets/" + props.id + ".png");
         </li>
       </ul>
     </div>
-    <img class="max-h-[500px] max-w-[420px]" :src="urlImg" alt="" />
+    <img class="sm:w-1/2 max-h-[500px] max-w-[420px]" :src="urlImg" alt="" />
   </div>
 </template>
 
 <style scoped>
 #planet {
   position: relative;
+  --font-txt-bg: 5.75rem;
+}
+@media screen(sm) {
+  #planet {
+    --left-position: 55%;
+    --font-txt-bg: 6rem;
+  }
+}
+@media screen(md) {
+  #planet {
+    --left-position: 50%;
+    --font-txt-bg: 7rem;
+  }
+  #planet::after {
+    z-index: -3 !important;
+  }
 }
 #planet::after {
   font-family: "Star Jhol";
   content: "planet";
   position: absolute;
-  left: 25%;
-  font-size: 6rem;
-  z-index: -3;
+  top: var(--top-position);
+  left: var(--left-position);
+  font-size: var(--font-txt-bg);
+  z-index: 3;
 }
 </style>
