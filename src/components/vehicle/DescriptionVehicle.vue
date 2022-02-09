@@ -31,9 +31,9 @@ const urlImg = computed(
   <div
     v-else-if="oneVehicle != null"
     id="vehicle"
-    class="container px-1 md:px-10 md:py-10 flex justify-between mx-auto"
+    class="container px-1 md:px-10 md:py-10 flex flex-col-reverse sm:flex-row justify-between mx-auto"
   >
-    <div class="flex flex-col justify-end">
+    <div class="sm:w-1/2 flex flex-col justify-end">
       <h2 class="text-[30px] items-center">{{ oneVehicle.name }}</h2>
       <ul class="m-2 text-[15px]">
         <li class="m-2">model : {{ oneVehicle.model }}</li>
@@ -64,20 +64,37 @@ const urlImg = computed(
         </li>
       </ul>
     </div>
-    <img class="max-h-[500px] max-w-[420px]" :src="urlImg" alt="" />
+    <img
+      class="max-h-[500px] max-w-[420px] object-cover"
+      :src="urlImg"
+      alt=""
+    />
   </div>
 </template>
 
 <style scoped>
-#vehicle {
+#vehicule {
   position: relative;
 }
-#vehicle::after {
+@media screen(sm) {
+  #vehicule {
+    --left-position: 55%;
+    --font-txt-bg: 6rem;
+  }
+}
+@media screen(md) {
+  #vehicule {
+    --left-position: 55%;
+    --font-txt-bg: 7rem;
+  }
+}
+#vehicule::after {
   font-family: "Star Jhol";
-  content: "Vehicule";
+  content: "vehicule";
   position: absolute;
-  left: 45%;
-  font-size: 6rem;
+  top: var(--top-position);
+  left: var(--left-position);
+  font-size: var(--font-txt-bg);
   z-index: -3;
 }
 </style>
