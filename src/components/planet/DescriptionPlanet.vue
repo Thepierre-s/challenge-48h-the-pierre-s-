@@ -21,7 +21,7 @@ watch(async (id) => {
   onePlanet.value = data.data;
   loading.value = false;
 });
-const urlImg = computed(() => "../src/assets/img/planets/" + props.id + ".png");
+const urlImg = computed(() => "/src/assets/img/planets/" + props.id + ".png");
 </script>
 
 <template>

@@ -22,7 +22,7 @@ watch(async (id) => {
   loading.value = false;
 });
 const urlImg = computed(
-  () => "../src/assets/img/characters/" + props.id + ".png"
+  () => "/src/assets/img/characters/" + props.id + ".png"
 );
 </script>
 

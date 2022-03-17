@@ -11,7 +11,7 @@ let urlPlanet = ref(null);
 urlPlanet.value = "/planets/" + planetID.value;
 
 let imgUrl = computed(
-  () => "../src/assets/img/planets/" + planetID.value + ".png"
+  () => "/src/assets/img/planets/" + planetID.value + ".png"
 );
 </script>
 
