@@ -33,8 +33,8 @@ import Navbar from "./components/Navbar.vue";
   letter-spacing: 3px;
 }
 body {
-  background: url("../public/background.jpg");
-  background-size: auto;
+  background: url("../public/background.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 html,

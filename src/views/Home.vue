@@ -1,7 +1,9 @@
 <template>
-<HeroVue></HeroVue>
+  <HeroVue></HeroVue>
+  <SectionTeam></SectionTeam>
 </template>
 
 <script setup>
-    import HeroVue from '../components/Hero.vue';
+import HeroVue from "../components/Hero.vue";
+import SectionTeam from "../components/section/Team.vue";
 </script>
