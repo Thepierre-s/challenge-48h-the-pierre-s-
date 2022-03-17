@@ -6,6 +6,7 @@ const isMobile = ref(false);
 
 <template>
   <div class="m-10">
+    <!-- desktop nav -->
     <div class="hidden sm:block">
       <router-link to="/" class="wrap-image text-xl m-10">home</router-link>
       <router-link to="/people" class="wrap-image text-xl m-10"
@@ -45,7 +46,9 @@ const isMobile = ref(false);
         >
       </div>
     </div>
+    <!-- desktop nav  end-->
 
+    <!-- mobile nav -->
     <div class="sm:hidden flex justify-between">
       <nuxt-link to="/home" class="cursor-pointer">
         <img
