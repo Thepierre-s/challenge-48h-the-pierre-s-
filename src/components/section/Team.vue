@@ -14,7 +14,7 @@
         <div class="lg:col-span-2">
           <ul
             role="list"
-            class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-12 sm:space-y-0 lg:gap-x-8"
+            class="space-y-12 grid justify-center sm:grid-cols-2 sm:gap-12 sm:space-y-0 lg:gap-x-8"
           >
             <li v-for="person in people" :key="person.name">
               <div class="flex items-center space-x-4 lg:space-x-6">
@@ -24,8 +24,8 @@
                   alt=""
                 />
                 <div class="font-medium text-lg leading-6 space-y-1">
-                  <h3>{{ person.name }}</h3>
-                  <p class="text-indigo-600">{{ person.role }}</p>
+                  <h3 class="truncate text-left">{{ person.name }}</h3>
+                  <p class="text-red-700 text-left">{{ person.role }}</p>
                 </div>
               </div>
             </li>
@@ -39,36 +39,41 @@
 <script>
 const people = [
   {
-    name: "Leslie Alexander",
-    role: "Co-Founder / CEO",
+    name: "Bertyn Boulikou",
+    role: "B3 Web",
     imageUrl:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
   {
-    name: "Leslie Alexander",
-    role: "Co-Founder / CEO",
+    name: "Faconnier Pierre",
+    role: "B3 Security",
     imageUrl:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
   {
-    name: "Leslie Alexander",
-    role: "Co-Founder / CEO",
+    name: "MOREAU Olivia",
+    role: "B2 Informatique",
     imageUrl:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
   {
-    name: "Leslie Alexander",
-    role: "Co-Founder / CEO",
+    name: "YASSER mohamed",
+    role: "B2 Informatique",
     imageUrl:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
   {
-    name: "Leslie Alexander",
-    role: "Co-Founder / CEO",
+    name: "CHEVALIER Maxime",
+    role: "B1 Informatique",
     imageUrl:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
-  // More people...
+  {
+    name: "quicy Florien",
+    role: "B1 Informatique",
+    imageUrl:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+  },
 ];
 
 export default {
