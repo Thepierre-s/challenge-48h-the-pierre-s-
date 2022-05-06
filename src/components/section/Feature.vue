@@ -69,8 +69,9 @@
           <div>
             <div class="inline-flex justify-center">
               <span
-                class="h-12 w-12 rounded-md flex items-center justify-center bg-red-700"
+                class="h-12 w-12 rounded-md flex items-center justify-center bg-red-700 p-2"
               >
+                <img :src="vehicleIconUrl" class="h-full w-full object-cover" />
               </span>
             </div>
             <div class="mt-6">
@@ -105,11 +106,60 @@
         </div>
       </div>
     </div>
+
+    <div class="mt-24">
+      <div
+        class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24"
+      >
+        <div
+          class="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0"
+        >
+          <div>
+            <div class="flex justify-center">
+              <span
+                class="h-12 w-12 rounded-md flex items-center justify-center bg-red-700 p-1"
+              >
+                <FilmIcon></FilmIcon>
+              </span>
+            </div>
+            <div class="mt-6">
+              <h2 class="text-3xl font-extrabold">Movie Details</h2>
+              <p class="mt-4 text-lg text-yellow-100">
+                Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis
+                bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet
+                sagittis viverra duis.
+              </p>
+              <div class="mt-6">
+                <router-link
+                  to="/people/1"
+                  class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm bg-red-700 hover:bg-red-800"
+                >
+                  See more
+                </router-link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 sm:mt-16 lg:mt-0">
+          <div
+            class="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full"
+          >
+            <img
+              class="w-full object-cover rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+              :src="movieUrl"
+              alt="Image of dark vador"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { UserGroupIcon } from "@heroicons/vue/outline";
+import { FilmIcon } from "@heroicons/vue/outline";
 import vehicleUrl from "../../assets/img/vehicles/14.png";
+import movieUrl from "../../assets/img/films/2.png";
 import characterUrl from "../../assets/img/characters/4.png";
+import vehicleIconUrl from "../../assets/img/feature/star-wars.png";
 </script>
