@@ -7,20 +7,20 @@ const isMobile = ref(false);
 <template>
   <div class="m-10">
     <!-- desktop nav -->
-    <div class="hidden sm:block">
-      <router-link to="/" class="wrap-image text-xl m-10">home</router-link>
-      <router-link to="/people" class="wrap-image text-xl m-10"
+    <div class="hidden md:block">
+      <router-link to="/" class="wrap-image text-md m-10">home</router-link>
+      <router-link to="/people" class="wrap-image text-md m-10"
         >people</router-link
       >
 
-      <router-link to="/quizz" class="wrap-image text-xl m-10"
+      <router-link to="/quizz" class="wrap-image text-md m-10"
         >quizz</router-link
       >
-      <router-link to="/films" class="wrap-image text-xl m-10"
+      <router-link to="/films" class="wrap-image text-md m-10"
         >films</router-link
       >
       <button
-        class="wrap-image text-xl m-10 relative"
+        class="wrap-image text-md m-10 relative"
         @click="isOpen = !isOpen"
       >
         More
@@ -29,19 +29,19 @@ const isMobile = ref(false);
         v-show="isOpen"
         class="flex flex-col w-72 bg-black bg-opacity-75 absolute top-26 right-12 z-10"
       >
-        <router-link to="/vehicles" class="wrap-image text-xl m-10"
+        <router-link to="/vehicles" class="wrap-image text-md m-10"
           >vehicles</router-link
         >
-        <router-link to="/species" class="wrap-image text-xl m-10"
+        <router-link to="/species" class="wrap-image text-md m-10"
           >species</router-link
         >
-        <router-link to="/planets" class="wrap-image text-xl m-10"
+        <router-link to="/planets" class="wrap-image text-md m-10"
           >planets</router-link
         >
-        <router-link to="/starships" class="wrap-image text-xl m-10"
+        <router-link to="/starships" class="wrap-image text-md m-10"
           >starship</router-link
         >
-        <router-link to="/search" class="wrap-image text-xl m-10"
+        <router-link to="/search" class="wrap-image text-md m-10"
           >search</router-link
         >
       </div>
@@ -49,7 +49,7 @@ const isMobile = ref(false);
     <!-- desktop nav  end-->
 
     <!-- mobile nav -->
-    <div class="sm:hidden flex justify-between">
+    <div class="md:hidden flex justify-between">
       <nuxt-link to="/home" class="cursor-pointer">
         <img
           class="h-12 w-12"
